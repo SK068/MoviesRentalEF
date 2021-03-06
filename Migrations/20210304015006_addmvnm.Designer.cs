@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MoviesRentalEF.Data;
 
 namespace MoviesRentalEF.Migrations
 {
     [DbContext(typeof(MoviesRentalEFContext))]
-    partial class MoviesRentalEFContextModelSnapshot : ModelSnapshot
+    [Migration("20210304015006_addmvnm")]
+    partial class addmvnm
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -86,10 +88,10 @@ namespace MoviesRentalEF.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<int>("MovieId")
+                    b.Property<int?>("Movie")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Movies")
+                    b.Property<int>("MovieId")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -109,7 +111,7 @@ namespace MoviesRentalEF.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MoviesRentalEF.Model.Movie", "Movie")
+                    b.HasOne("MoviesRentalEF.Model.Movie", "Movies")
                         .WithMany("RentedMovies")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -117,7 +119,7 @@ namespace MoviesRentalEF.Migrations
 
                     b.Navigation("Customers");
 
-                    b.Navigation("Movie");
+                    b.Navigation("Movies");
                 });
 
             modelBuilder.Entity("MoviesRentalEF.Model.Customer", b =>

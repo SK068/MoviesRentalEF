@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
+<!--Add background color lightcyan to whole body-->
+<body style="background-color:lightcyan;">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
+            <!--Change the background color and font family of navigation baar-->
+            <div class="container" style="font-family:cursive; text-align:center; background-color:aquamarine;" >
+                <!--Add Navigation baar-->
                 <a class="navbar-brand" asp-area="" asp-page="/Index">MoviesRentalEF</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -18,12 +21,18 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+                        
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Customers/Index">Customer</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Movies/Index">Movies</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/RentedMovie/Index">Rented Movies</a>
+                        </li>
+                        
+                        
                     </ul>
                 </div>
             </div>
@@ -36,8 +45,9 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - MoviesRentalEF - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        <!--change the footer and Add css to change the style of footer-->
+        <div class="container" style="font-family:cursive; text-align:center;color:cornflowerblue;">
+            &copy;2021 Movies Rental project developed by Supreet Samra 
         </div>
     </footer>
 

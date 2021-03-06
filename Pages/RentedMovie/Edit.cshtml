@@ -9,26 +9,12 @@
 
 <h4>RentedMovies</h4>
 <hr />
-<div class="row">
+<!--- Add css to change the font family----->
+<div class="row" style="font-family:cursive;">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="RentedMovies.ID" />
-            <div class="form-group">
-                <label asp-for="RentedMovies.LastName" class="control-label"></label>
-                <input asp-for="RentedMovies.LastName" class="form-control" />
-                <span asp-validation-for="RentedMovies.LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RentedMovies.Address" class="control-label"></label>
-                <input asp-for="RentedMovies.Address" class="form-control" />
-                <span asp-validation-for="RentedMovies.Address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RentedMovies.Phone" class="control-label"></label>
-                <input asp-for="RentedMovies.Phone" class="form-control" />
-                <span asp-validation-for="RentedMovies.Phone" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <label asp-for="RentedMovies.MovieId" class="control-label"></label>
                 <select asp-for="RentedMovies.MovieId" class="form-control" asp-items="ViewBag.MovieId"></select>
@@ -38,6 +24,11 @@
                 <label asp-for="RentedMovies.CustomerId" class="control-label"></label>
                 <select asp-for="RentedMovies.CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
                 <span asp-validation-for="RentedMovies.CustomerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentedMovies.Movies" class="control-label"></label>
+                <input asp-for="RentedMovies.Movies" class="form-control" />
+                <span asp-validation-for="RentedMovies.Movies" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

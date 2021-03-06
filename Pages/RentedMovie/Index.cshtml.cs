@@ -25,7 +25,7 @@ namespace MoviesRentalEF.Pages.RentedMovie
         {
             RentedMovies = await _context.RentedMovies
                 .Include(r => r.Customers)
-                .Include(r => r.Movies).ToListAsync();
+                .Include(r => r.Movie).ToListAsync();
         }
     }
 }

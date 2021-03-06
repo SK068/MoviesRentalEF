@@ -10,36 +10,25 @@
 <div>
     <h4>RentedMovies</h4>
     <hr />
-    <dl class="row">
+    <!--- Add css to change the font family----->
+    <dl class="row" style="font-family:cursive;">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RentedMovies.LastName)
+            @Html.DisplayNameFor(model => model.RentedMovies.Movie)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RentedMovies.LastName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RentedMovies.Address)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RentedMovies.Address)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RentedMovies.Phone)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RentedMovies.Phone)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RentedMovies.Movies)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RentedMovies.Movies.MovieID)
+            @Html.DisplayFor(model => model.RentedMovies.Movie.MovieID)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.RentedMovies.Customers)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.RentedMovies.Customers.CustomerID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RentedMovies.Movies)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RentedMovies.Movies)
         </dd>
     </dl>
 </div>

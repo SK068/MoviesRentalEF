@@ -6,20 +6,27 @@ using System.Threading.Tasks;
 
 namespace MoviesRentalEF.Model
 {
+    //Decalre movies name
+    public enum Movies
+    {
+        ABCD,Krish,War,Don,Nayak
+    }
+    //Add RentedMovies class
     public class RentedMovies
     {
         public int ID { get; set; }
       
-        public string LastName { get; set; }
-        public string Address { get; set; }
-        public int Phone { get; set; }
+       //Add Foreign key to join movie table with rented movie table
         [ForeignKey("Movie")]
        public int MovieId { get; set; }
-        public Movie Movies { get; set; }
+        public Movie Movie { get; set; }
+        //Add Foreign key to join customer table with rented movie table 
         [ForeignKey("Customer")]
-       public int CustomerId { get; set; }
+       
+        public int CustomerId { get; set; }
         public Customer Customers { get; set; }
+        public Movies? Movies { get; set; }
 
-       // public ICollection<RentedMovies> RentedMovie { get; set; }
+       
     }
 }

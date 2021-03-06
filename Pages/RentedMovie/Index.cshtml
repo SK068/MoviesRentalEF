@@ -4,57 +4,47 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
+<!--Change the heading and add css to change the design -->
+<h1 style="text-align:center; font-family:cursive;">Rented Movies</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<table class="table">
+<!--- Add css to change the font family----->
+<table class="table" style="font-family:cursive;">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.RentedMovies[0].LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RentedMovies[0].Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RentedMovies[0].Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RentedMovies[0].Movies)
+                @Html.DisplayNameFor(model => model.RentedMovies[0].Movie)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.RentedMovies[0].Customers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentedMovies[0].Movies)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.RentedMovies) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Movies.MovieID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Customers.CustomerID)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.RentedMovies)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movie.MovieID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customers.CustomerID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movies)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

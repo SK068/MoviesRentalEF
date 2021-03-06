@@ -32,7 +32,7 @@ namespace MoviesRentalEF.Pages.RentedMovie
 
             RentedMovies = await _context.RentedMovies
                 .Include(r => r.Customers)
-                .Include(r => r.Movies).FirstOrDefaultAsync(m => m.ID == id);
+                .Include(r => r.Movie).FirstOrDefaultAsync(m => m.ID == id);
 
             if (RentedMovies == null)
             {
